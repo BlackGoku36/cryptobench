@@ -69,7 +69,7 @@ if __name__ == "__main__":
 
     PORT = 8000
     if (HOST := os.getenv("RECEIVER")) is not None:
-        benchmark_sender_after_connecting(benchmark_module, HOST, PORT)
+        print(benchmark_sender_after_connecting(benchmark_module, HOST, PORT))
     else:
         HOST = "0.0.0.0"
-        benchmark_receiver_after_connecting(benchmark_module, HOST, PORT)
+        print(benchmark_receiver_after_connecting(benchmark_module, HOST, PORT))

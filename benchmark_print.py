@@ -17,7 +17,7 @@ def encrypt_wrapper(plaintext: bytes) -> bytes:
     for i in range(0, len(plaintext), block_size):
         block = int.from_bytes(plaintext[i : i + block_size], "big")
         state = print_cipher.encrypt(block, _key, _permkey)
-        ciphertext.extend(state.to_bytes(block_size))
+        ciphertext.extend(state.to_bytes(block_size, "big"))
     return bytes(ciphertext)
 
 
@@ -26,7 +26,7 @@ def decrypt_wrapper(ciphertext: bytes) -> bytes:
     for i in range(0, len(ciphertext), block_size):
         block = int.from_bytes(ciphertext[i : i + block_size], "big")
         state = print_cipher.decrypt(block, _key, _permkey)
-        plaintext.extend(state.to_bytes(block_size))
+        plaintext.extend(state.to_bytes(block_size, "big"))
     return bytes(plaintext)
 
 
