@@ -1,2 +1,1 @@
-git+https://github.com/virinci/cryterion.git@main
-hwcounter
+git+https://github.com/BlackGoku36/cryterion.git@main
